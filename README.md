@@ -1,44 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sport Calendar
 
-## Available Scripts
+## Brief
 
-In the project directory, you can run:
+A simple weekly calendar interface, wrapping the following data structure:
 
-### `yarn start`
+```ts
+type FetchData = {
+  success: boolean;
+  data: {
+    days: string[];
+    availability: {
+      [name: string]: number[];
+    };
+  };
+};
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Implementation
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+A web app written in React in the Typescript dialect.
+Libraries used:
 
-### `yarn test`
+- `create-react-app`
+- `react-big-calendar`
+- `axios`
+- `moment`
+- React hooks
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Execution
 
-### `yarn build`
+- Deployed a `create-react-app` typescript template and stripped to barebone (2 min)
+- added the basic hooks and started fiddling with the data structure to best map to a convenient updated data structure (20 min)
+- adding `react-big-calendar` and scraping the library source because documentation is inexistent to find the right props to edit and provide (30 min)
+- styling (10 min)
+- documenting (30 min)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Requisites
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- node
+- yarn/npm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can download the dependencies by running: `yarn` or `npm install`
+You can run the project by running: `yarn start` or `npm run start`.
 
-### `yarn eject`
+The project will open at localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Improvements
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- I'd add responsive UI, improved UX, better fonts, loaders, UI testing, a storybook, export useful as library
+- The pastebin provided have rightfully CORS problems, provide a mock backend service or add the task of mocking backend data
